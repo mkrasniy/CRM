@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+
+	<bean id="dataSourceCRM"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://ki-doc001:3306/crm_db" />
+		<property name="username" value="mkrasnyi" />
+		<property name="password" value="132132" />
+	</bean>
+	<bean id="dataSource"
+		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/crm_new" />
+		<property name="username" value="crm" />
+		<property name="password" value="111" />
+	</bean>
+
+	<bean id="oraDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@db1-vip.intellecom.int:1521:BILL11"/>
+		<property name="username" value="reporter"/>
+		<property name="password" value="Dz65ba9t_"/>
+		<property name="initialSize" value="5" />
+	</bean>
+
+
+
+
+
+</beans>

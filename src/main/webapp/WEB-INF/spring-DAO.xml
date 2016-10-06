@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="CustomerInformDAO"
+          class="com.intellecom.crm.dao.CustomerInformDAOImpl">
+        <constructor-arg><ref bean="oraDataSource"/></constructor-arg>
+    </bean>
+    <bean id="CustomerRateDAO"
+          class="com.intellecom.crm.dao.CustomerRateDAOImpl">
+        <constructor-arg><ref bean="oraDataSource"/></constructor-arg>
+    </bean>
+    <bean id="AccountDAO"
+          class="com.intellecom.crm.dao.AccountDAOImpl">
+        <constructor-arg><ref bean="oraDataSource"/></constructor-arg>
+        <constructor-arg><ref bean="dataSourceCRM"/></constructor-arg>
+    </bean>
+
+    <bean id="BillPayDAO"
+          class="com.intellecom.crm.dao.BillPayDAOImpl">
+        <constructor-arg><ref bean="oraDataSource"/></constructor-arg>
+    </bean>
+
+    <bean id="AccountHistoryDAO"
+          class="com.intellecom.crm.dao.AccountHistoryDAOImpl">
+        <constructor-arg><ref bean="oraDataSource"/></constructor-arg>
+    </bean>
+</beans>
