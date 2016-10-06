@@ -2,19 +2,19 @@ package com.intellecom.crm.dao;
 
 import com.intellecom.crm.model.CustomerRate;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.List;
 
 /**
  * Created by MKrasnyi on 06.05.2016.
  */
-public class CustomerRateDAOImpl implements CustomerRateDAO{
+public class CustomerRateDAOImpl implements CustomerRateDAO {
 
     private JdbcTemplate jdbcTemplate;
+
     public CustomerRateDAOImpl(BasicDataSource dataSource) throws SQLException {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
@@ -37,13 +37,13 @@ public class CustomerRateDAOImpl implements CustomerRateDAO{
                 " order by r.eff_date desc) where rn BETWEEN ? and ?";
 
         List<CustomerRate> listCustomer = jdbcTemplate.query(sql, new Object[]{start, end},
-                (rs, rownum)-> new CustomerRate(rs.getInt("rn"),
-                                                rs.getString("accountnumber"),
-                                                rs.getString("accountname"),
-                rs.getString("bs"),
-                rs.getString("staff"),
-                rs.getInt("rate"),
-                rs.getInt("type"),
+                (rs, rownum) -> new CustomerRate(rs.getInt("rn"),
+                        rs.getString("accountnumber"),
+                        rs.getString("accountname"),
+                        rs.getString("bs"),
+                        rs.getString("staff"),
+                        rs.getInt("rate"),
+                        rs.getInt("type"),
                         rs.getString("cust_comment"),
                         rs.getString("dt"),
                         rs.getInt("max_rn")));
