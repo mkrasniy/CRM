@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 import java.sql.SQLException;
 
 /**
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 
 @Configuration
 @ComponentScan("com.intellecom.crm.*")
-public class DAOConfig {
+public class DAOConfig extends WebMvcConfigurerAdapter {
 
     @Autowired
     DataConfig dataConfig;

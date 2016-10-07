@@ -23,7 +23,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/admin/res/**").addResourceLocations("WEB-INF/resource/css/", "WEB-INF/resource/js/", "WEB-INF/resource/img/", "WEB-INF/resource/fonts/").setCachePeriod(1000);
     }
 
-    @Bean
+    @Bean(name="viewResolver")
     public InternalResourceViewResolver setupViewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/pages/");

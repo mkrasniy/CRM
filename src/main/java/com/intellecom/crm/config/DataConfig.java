@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -17,7 +18,7 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("com.intellecom.crm.*")
 @PropertySource("classpath:db.properties")
-public class DataConfig {
+public class DataConfig extends WebMvcConfigurerAdapter {
 
     private static final String PROP_DATABASE_DRIVER = "db.driver";
     private static final String PROP_DATABASE_PASSWORD = "db.password";

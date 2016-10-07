@@ -20,6 +20,7 @@ import java.util.List;
  * Created by MKrasnyi on 28.04.2016.
  */
 @Controller
+@RequestMapping("/")
 public class AdminController {
 
     @Autowired
