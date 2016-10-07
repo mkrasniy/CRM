@@ -19,7 +19,7 @@ public class AccountDAOImpl implements AccountDAO {
 
     private JdbcTemplate jdbcTemplate;
     private JdbcTemplate jdbcTemplateCRM;
-    public AccountDAOImpl(BasicDataSource dataSource,DriverManagerDataSource dataSourceCRM) throws SQLException {
+    public AccountDAOImpl(BasicDataSource dataSource,BasicDataSource dataSourceCRM) throws SQLException {
         jdbcTemplate = new JdbcTemplate(dataSource);
         jdbcTemplateCRM = new JdbcTemplate(dataSourceCRM);
     }

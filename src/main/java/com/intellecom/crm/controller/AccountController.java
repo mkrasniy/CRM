@@ -1,5 +1,6 @@
 package com.intellecom.crm.controller;
 
+import com.intellecom.crm.config.DAOConfig;
 import com.intellecom.crm.dao.AccountDAO;
 import com.intellecom.crm.dao.AccountHistoryDAO;
 import com.intellecom.crm.dao.BillPayDAO;
@@ -27,13 +28,18 @@ import java.util.List;
 public class AccountController {
 
     @Autowired
-    private AccountDAO accountDAO;
+    private DAOConfig daoConfig;
 
     @Autowired
-    private BillPayDAO billPayDAO;
+    private AccountDAO accountDAO=daoConfig.accountDAO();
+
+
 
     @Autowired
-    private AccountHistoryDAO accountHistoryDAO;
+    private BillPayDAO billPayDAO=daoConfig.billPayDAO();
+
+    @Autowired
+    private AccountHistoryDAO accountHistoryDAO=daoConfig.accountHistoryDAO();
 
     @RequestMapping(value="{acc}")
     public ModelAndView listContact(ModelAndView model, @PathVariable(value = "acc") String acc) throws IOException {
